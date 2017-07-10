@@ -1,0 +1,31 @@
+{
+  "fields": {
+    "id": {
+      "type": "INTEGER"
+    },
+    "title": {
+      "fulltext": true,
+      "type": "TEXT",
+      "snippet": true
+    },
+    "date": {
+      "type": "DATETIME",
+      "facet": true,
+      "sort": true
+    },
+    "tags": {
+      "fulltext": true,
+      "type": "TEXT",
+      "facet": true
+    },
+    "content": {
+      "fulltext": true,
+      "type": "TEXT",
+      "snippet": true
+    },
+    "link": {
+      "type": "TEXT",
+      "stored": true
+    }
+  }
+}
