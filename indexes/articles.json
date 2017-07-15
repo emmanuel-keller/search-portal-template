@@ -2,29 +2,37 @@
   "fields": {
     "$id$": {
       "type": "INTEGER",
-      "fulltext": true
+      "fulltext": "ENGLISH"
     },
     "title": {
       "type": "TEXT",
-      "fulltext": true
+      "fulltext": "ENGLISH"
     },
     "date": {
       "type": "LONG",
-      "facet": true,
       "sort": true
     },
     "tags": {
       "type": "TEXT",
-      "fulltext": true,
+      "fulltext": "ENGLISH",
       "facet": true
     },
     "content": {
       "type": "TEXT",
-      "fulltext": true
+      "fulltext": "ENGLISH"
     },
     "link": {
       "type": "TEXT",
       "stored": true
+    },
+    "full": {
+      "type": "TEXT",
+      "fulltext": "ASCII",
+      "copy_from": [
+        "title",
+        "content",
+        "tags"
+      ]
     }
   }
 }
