@@ -1,27 +1,26 @@
 {
   "fields": {
-    "id": {
-      "type": "INTEGER"
+    "$id$": {
+      "type": "INTEGER",
+      "fulltext": true
     },
     "title": {
-      "fulltext": true,
       "type": "TEXT",
-      "snippet": true
+      "fulltext": true
     },
     "date": {
-      "type": "DATETIME",
+      "type": "LONG",
       "facet": true,
       "sort": true
     },
     "tags": {
-      "fulltext": true,
       "type": "TEXT",
+      "fulltext": true,
       "facet": true
     },
     "content": {
-      "fulltext": true,
       "type": "TEXT",
-      "snippet": true
+      "fulltext": true
     },
     "link": {
       "type": "TEXT",
