@@ -34,5 +34,37 @@
         "tags"
       ]
     }
+  },
+  "queries": {
+    "main": {
+      "returned": [
+        "$id$",
+        "date",
+        "link"
+      ],
+      "snippets": {
+        "title": {
+          "field": "title"
+        },
+        "content": {
+          "field": "content",
+          "pre_tag": "<strong>",
+          "post_tag": "</strong>",
+          "multivalued_separator": ". ",
+          "ellipsis": "… ",
+          "max_passages": 5,
+          "max_length": 200,
+          "break_iterator": {
+            "type": "sentence",
+            "language": "en-US"
+          }
+        }
+      },
+      "facets": {
+        "tags": {
+          "top": 10
+        }
+      }
+    }
   }
 }
