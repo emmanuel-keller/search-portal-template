@@ -1,12 +1,12 @@
 {
   "fields": {
     "$id$": {
-      "type": "INTEGER",
-      "fulltext": "ENGLISH"
+      "type": "INTEGER"
     },
     "title": {
       "type": "TEXT",
-      "fulltext": "ENGLISH"
+      "fulltext": "ENGLISH",
+      "stored": true
     },
     "date": {
       "type": "LONG",
@@ -15,11 +15,13 @@
     "tags": {
       "type": "TEXT",
       "fulltext": "ENGLISH",
-      "facet": true
+      "facet": true,
+      "stored": true
     },
     "content": {
       "type": "TEXT",
-      "fulltext": "ENGLISH"
+      "fulltext": "ENGLISH",
+      "stored": true
     },
     "link": {
       "type": "TEXT",

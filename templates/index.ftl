@@ -20,11 +20,17 @@
             </span>
             </div>
         </form>
-        <hr>
     </div>
 </div>
 <#if results??>
-
+<div class="container">
+    <h3>${results.totalHits}</h3>
+    <#list results.documents as document>
+        <p>
+        ${document.fields}
+        </p>
+    </#list>
+</div>
 </#if>
 <#include 'includes/foot.ftl'>
 </body>
