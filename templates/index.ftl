@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <#include 'includes/head.ftl'>
-    <title>My Search Portal</title>
+    <title>My Search Portal IL EST BO</title>
 </head>
 <body>
 <div class="jumbotron jumbotron-fluid">
