@@ -24,11 +24,12 @@
 </div>
 <#if results??>
 <div class="container">
-    <h3>${results.totalHits}</h3>
+    <div><#if results.totalHits?? && results.totalHits == 0></div>
     <#list results.documents as document>
-        <p>
-        ${document.fields}
-        </p>
+        <br/>
+        <h3><a href="#">${document.snippets['title']!}</a></h3>
+        <div class="small"><#if document.fields??>${document.fields['link']!}</#if></div>
+        <div>${document.snippets['content']!'- Empty content -'}</div>
     </#list>
 </div>
 </#if>
