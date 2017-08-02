@@ -11,6 +11,7 @@
             <h1 class="display-3">My Search Portal</h1>
             <p class="lead">This is my awesome search portal</p>
         <#include 'includes/search_form.ftl'>
+        <#include 'includes/errors.ftl'>
         </div>
     </div>
 <#if results??>
