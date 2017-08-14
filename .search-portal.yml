@@ -1,0 +1,17 @@
+# Set the relative path to the optional directories
+directories:
+    css: css
+    javascript: js
+    templates: templates
+    indexes: indexes
+
+# Define how to index the files
+file_indexing:
+    inclusion_patterns:
+      - "*.md"
+      - "*.txt"
+      - "*.html"
+    exclusion_patterns:
+      - "/target/*"
+      - "/build/*"
+    to_index: articles
