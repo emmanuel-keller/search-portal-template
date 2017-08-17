@@ -19,8 +19,8 @@ ${results.totalHits} <#if results.totalHits == 1>result<#else>results</#if>
     <#if document.snippets??>
         <#assign content=document.snippets['content']/>
     </#if>
-    <h4><a href="${link!'#'}">${title!'Untitled'}</a></h4>
-    <div class="text-success">${(link!)?remove_beginning('http://')}</div>
+    <h4><a href="${link!'#')}">${title!'Untitled'}</a></h4>
+    <div class="text-success">${(link!)?remove_beginning('https://github.com/'}</div>
     <div>${content!'- Empty content -'}</div>
     <#if tags??>
         <div>
