@@ -1,7 +1,7 @@
 {
   "fields": {
     "$id$": {
-      "type": "STRING",
+      "type": "TEXT",
       "stored": true
     },
     "title": {
