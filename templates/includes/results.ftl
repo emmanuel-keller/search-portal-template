@@ -3,9 +3,7 @@
 <#-- Display the number of results -->
 <#if results.totalHits?? && results.totalHits gt 0>
 ${results.totalHits} <#if results.totalHits == 1>result<#else>results</#if>
-    <#if results.timer??  && results.timer.total_time>
-        (${(results.timer.total_time / 10)?round/100} seconds)
-    </#if>
+    (${(results.timer.totalTime / 10)?round/100} seconds)
 <#else>No results found for
     <strong>${keywords!?html}</strong>
 </#if>
