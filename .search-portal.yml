@@ -1,17 +1,47 @@
 # Set the relative path to the optional directories
 directories:
-    css: css
-    javascript: js
+    # The optional "statics" directory contains your HTML, CSS or JS files
+    statics: statics
+    # This optional directory contains your Freemarker templates if you want to override them
     templates: templates
-    indexes: indexes
 
 # Define how to index the files
 file_indexing:
+    # The pattern supports * and ? wildcards.
     inclusion_patterns:
-      - "*.md"
-      - "*.txt"
-      - "*.html"
+        - "*.md"
+        - "*.txt"
+        - "*.html"
     exclusion_patterns:
-      - "/target/*"
-      - "/build/*"
-    to_index: articles
+        - "/target/*"
+        - "/build/*"
+    # Define which index will be filled with the indexed documents
+    to_index: docs
+
+# Start the definition of indexes
+indexes:
+
+    # The name of this index is "docs"
+    docs:
+        # Here are the fields of the index
+        fields:
+            $id$: { type: TEXT, stored: true }
+            title: { type: TEXT, fulltext: ENGLISH, stored: true }
+            date: { type: LONG, sort: true }
+            tags: { type: TEXT, fulltext: ENGLISH, facet: true, stored: true }
+            content: { type: TEXT, fulltext: ENGLISH, stored: true }
+            url: { type: TEXT, stored: true }
+            full: { type: TEXT, fulltext: ASCII, copy_from: [ title, content, url, tags ] }
+
+        # We define our queries
+        queries:
+            # The name of this query is "main"
+            main:
+              # The fields this query will return
+              returned: [ $id$, title, date, tags, url ]
+              # Let's define some snippet (text extraction and highlighting)
+              snippets:
+                content: { max_passages: 5, max_length: 200 }
+              # Define some facets
+              facets:
+                tags: { top: 10 }
